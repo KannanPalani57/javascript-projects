@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.athigarams{
+    display: none;
+}
+
+.iyalgal {
+    display: none;
+}
+
+.kurals-section{
+    display: none;
+}
+
+.kural-explanation{
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.hide{
+    display: none;
+}
