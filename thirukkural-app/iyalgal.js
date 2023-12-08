@@ -7,16 +7,24 @@ const iyalgalSection = document.getElementById("iyalgal");
 //
 
 
+let currentPage = window.location.search.split("?")[1].split("=")[1]
 
-function createCustomButtonElement(text, btnAttr, btnId) {
-    var buttonTag = document.createElement("button");
 
-    buttonTag.innerHTML = text;
 
-    buttonTag.setAttribute(btnAttr, text);
+function createCustomButtonElement(text, btnAttr, btnId, transliteration) {
+    var linkTag = document.createElement("a");
 
-    buttonTag.id = btnId;
-    return buttonTag;
+
+    var linkText = document.createTextNode(text);
+
+    // buttonTag.setAttribute(btnAttr, text);
+
+    // buttonTag.id = btnId;
+
+    linkTag.appendChild(linkText)
+    linkTag.href = "./athigarams/athigarams.html?paal=" + currentPage + "&athigaram=" + transliteration;
+
+    return linkTag;
 }
 
 console.log(thirukkuralDetails, "0--")
@@ -31,7 +39,8 @@ const displayIyalgal = (paalIyalgal) => {
         let iyalLink = createCustomButtonElement(
             item.name,
             "data-iyal",
-            "iyalButton"
+            "iyalButton",
+            item.transliteration,
         );
 
         const iyalgalEach = document.createElement("div");
@@ -39,7 +48,7 @@ const displayIyalgal = (paalIyalgal) => {
         iyalgalEach.id = "iyalgalEach";
         iyalgalEach.className = "iyalgalEach";
 
-        iyalgalEach.appendChild(iyal);
+        // iyalgalEach.appendChild(iyal);
         iyalgalEach.appendChild(iyalLink);
 
         iyalgalSection.appendChild(iyalgalEach);
@@ -47,7 +56,6 @@ const displayIyalgal = (paalIyalgal) => {
     // data(paalIyalgal);
 };
 
-let currentPage = window.location.search.split("?")[1].split("=")[1]
 
 let paalIyalgal;
 if (currentPage === "arathupaal") {

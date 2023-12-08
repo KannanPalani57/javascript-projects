@@ -37,6 +37,8 @@ arathupaalBtn.addEventListener("click", (e) => {
   displayIyalgal(arathuPaalIyalgal);
 });
 
+
+
 function createCustomButtonElement(text, btnAttr, btnId) {
   var buttonTag = document.createElement("button");
 
