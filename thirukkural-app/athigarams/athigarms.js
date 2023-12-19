@@ -55,8 +55,8 @@ let getAthigarams = paalIyalgal.detail.filter(
 )[0].chapters.detail;
 
 
-function createCustomButtonElement(text, btnAttr, btnId, transliteration) {
-    var linkTag = document.createElement("a");
+function createCustomButtonElement(text, btnAttr, btnId, transliteration, athigaramStart, athigaramEnd)  {
+    var linkTag = document.createElement("a")
 
 
     var linkText = document.createTextNode(text);
@@ -66,7 +66,7 @@ function createCustomButtonElement(text, btnAttr, btnId, transliteration) {
     // buttonTag.id = btnId;
 
     linkTag.appendChild(linkText)
-    linkTag.href = "./athigarams/athigarams.html?athigaram=" + transliteration;
+    linkTag.href = "../kuralgal/kuralgal.html?athigaram=" + transliteration + "&athigaramStart="+ athigaramStart + "&athigaramEnd=" +athigaramEnd;
 
     return linkTag;
 }
@@ -82,7 +82,10 @@ getAthigarams.map((item) => {
     let athigaramBtn = createCustomButtonElement(
         item.name,
         "data-athigaram",
-        "athigaramButton"
+        "athigaramButton",
+        item.transliteration,
+        item.start,
+        item.end
     );
 
     athigaramBtn.setAttribute("data-athigarmStart", item.start);
