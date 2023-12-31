@@ -25,3 +25,10 @@ setInterval(() => {
   const second = Math.floor(diff / 1000) % 60;
   secondElement.innerHTML = second;
 }, 1000);
+
+// one day - 8.64e+7 milli seconds
+// one day - 86400 seconds = 24 * 60 * 60
+// one day - 1440 minutes
+// one day - 24 hours
+
+// 1 hour = 60 seconds * 60 minutes = 3600 seconds
