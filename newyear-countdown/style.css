@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-image: url("https://wallpapers.com/images/high/new-year-greeting-on-wood-kydwxnibba4dthpk.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+body * {
+    z-index: 1;
+
+}
+
+
+.countdown  {
+    
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: flex-end;
+    justify-content: center;
+    /* margin-bottom: 260   px; */
+
+}
+
+.countdown h1  {
+    font-size: 40px;
+}
